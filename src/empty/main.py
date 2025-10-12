@@ -3,7 +3,12 @@
 import asyncio
 
 
-async def main():
+async def add(n: float, m: float) -> float:
+    """Add two floats."""
+    return n + m
+
+
+async def main() -> None:
     """Main."""
     print("Hello from empty!")
 
