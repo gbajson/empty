@@ -1,0 +1,82 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=2000']
+      - id: check-ast
+      - id: check-builtin-literals
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-illegal-windows-names
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-vcs-permalinks
+      - id: check-xml
+      - id: check-yaml
+      - id: debug-statements
+      - id: destroyed-symlinks
+      - id: detect-private-key
+      - id: end-of-file-fixer
+        exclude: '\.(j2|txt)$'
+      - id: forbid-new-submodules
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: name-tests-test
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+        exclude: '\.(j2|txt)$'
+        args: [--markdown-linebreak-ext=md]
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
+      - id: gitleaks
+
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        language: python
+        types: [python]
+      - id: black
+        name: black
+        entry: black
+        language: python
+        types: [python]
+      - id: bandit
+        name: bandit
+        entry: bandit
+        language: python
+        types: [ python ]
+        args:
+          - --ini
+          - .bandit
+        fail_fast: true
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: python
+        types: [ python ]
+        fail_fast: true
+      - id: mypy
+        name: mypy
+        entry: mypy
+        language: system
+        types: [python]
+        pass_filenames: false
+        args:
+          - --config-file=mypy.ini
+        fail_fast: true
+      - id: pytest
+        name: pytest
+        entry: pytest
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [pre-commit]
+        fail_fast: true

@@ -1,0 +1,36 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "never",
+        "source.organizeImports": "explicit"
+    },
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "python.analysis.typeCheckingMode": "strict",
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "black-formatter.importStrategy": "fromEnvironment",
+    "isort.importStrategy": "fromEnvironment",
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/src"
+    ],
+    "mypy-type-checker.args": [
+        "--check-untyped-defs"
+    ],
+    "mypy.runUsingActiveInterpreter": true,
+    "mypy.extraArguments": [
+        "--check-untyped-defs"
+    ],
+    "mypy.dmypyExecutable": "${workspaceFolder}/.venv/bin/dmypy",
+    "mypy.configFile": "mypy.ini",
+    "mypy.targets": [
+        "src"
+    ]
+}
