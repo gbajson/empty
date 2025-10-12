@@ -19,8 +19,3 @@ async def test_add_float_large_small() -> None:
 
     # Than
     assert result == expected
-
-
-def test_basic_math() -> None:
-    """Test"""
-    assert 1 + 1 == 2
