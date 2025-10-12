@@ -17,5 +17,5 @@ async def test_add_float_large_small() -> None:
     # When
     result = await add(n, m)
 
-    # Than
+    # Then
     assert result == expected
