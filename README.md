@@ -1,4 +1,4 @@
-# empty
+# empty-python
 
 Boilerplate for my Python projects. It contains:
 
