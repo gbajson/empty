@@ -1,4 +1,4 @@
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim AS torch
+FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim AS torch
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
 ENV UV_PYTHON_DOWNLOADS=0
 WORKDIR /app
@@ -8,7 +8,7 @@ RUN uv lock && uv sync --frozen --no-install-project --no-dev
 
 
 
-FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim AS builder
+FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim AS builder
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy
 ENV UV_PYTHON_DOWNLOADS=0
 WORKDIR /app
@@ -20,7 +20,7 @@ RUN uv sync --frozen --no-install-project --no-dev
 
 
 
-FROM ghcr.io/gbajson/python-base:latest
+FROM ghcr.io/gbajson/python-base:3.13.8
 WORKDIR /app
 RUN mkdir /app/.venv /app/src
 COPY --from=builder --chown=user:user /app/.venv /app/.venv
