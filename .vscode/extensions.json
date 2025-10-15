@@ -2,6 +2,7 @@
     "recommendations": [
         "charliermarsh.ruff",
         "fb-pyre-check.pyre-vscode",
+        "johnpapa.vscode-peacock",
         "ms-azuretools.vscode-docker",
         "ms-pyright.pyright",
         "ms-python.black-formatter",
