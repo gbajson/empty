@@ -11,5 +11,5 @@ Boilerplate for my Python projects. It contains:
 
 <img width="1308" height="392" alt="image" src="https://github.com/user-attachments/assets/42e0966d-a0b3-48ca-bb20-b2ff995990a6" />
 
-2. Rename `empty.code-workspace`.
+2. Rename `empty-python.code-workspace`.
 3. Fill project name and description in `pyproject.toml`.
